@@ -1,10 +1,4 @@
-
-```markdown
 # rSearch Flask Backend
-
-![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
-![Flask](https://img.shields.io/badge/flask-2.3.2-green.svg)
-![OpenAI](https://img.shields.io/badge/openai-1.0+-brightgreen.svg)
 
 A Python Flask backend implementation of rSearch, providing AI-powered search capabilities with Serper API and OpenAI integration.
 
