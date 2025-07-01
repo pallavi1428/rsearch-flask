@@ -134,4 +134,3 @@ MIT License
 - Original rSearch concept by [Justmalhar](https://github.com/Justmalhar/rsearch)
 - Serper API for search results
 - OpenAI for AI capabilities
-```
