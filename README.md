@@ -64,16 +64,20 @@ cp .env.example .env
    npm install
    ```
 
-### Running the Server
+## Running the System
 
-**Development:**
+### 1. Start Backend (in one terminal)
 ```bash
+cd backend
 python app.py
+# Runs on http://localhost:8000
 ```
 
-**Production (using Waitress):**
+### 2. Start Frontend (in another terminal)
 ```bash
-waitress-serve --port=8000 app:app
+cd frontend
+npm run dev
+# Runs on http://localhost:3000
 ```
 
 ## Testing the API
