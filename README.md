@@ -125,22 +125,6 @@ npm run dev
 | `SERPER_API_KEY` | Yes | Your Serper API key |
 | `FLASK_ENV` | No | Set to "production" for prod |
 
-## Running the System 
-
-### 1. Start Backend (in one terminal)
-```bash
-cd backend
-python app.py
-# Runs on http://localhost:8000
-```
-
-### 2. Start Frontend (in another terminal)
-```bash
-cd frontend
-npm run dev
-# Runs on http://localhost:3000
-```
-
 ## License
 
 MIT License
