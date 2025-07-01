@@ -34,22 +34,34 @@ A Python Flask backend implementation of rSearch, providing AI-powered search ca
    cd rsearch-flask/backend
    ```
 
-2. Create and activate virtual environment:
+2. Backend Setup
+   ```bash
+   cd backend
+   ```
+3. Create .env file
+cp .env.example .env
+# Edit with your API keys
+
+4. Create and activate virtual environment:
    ```bash
    python -m venv venv
    source venv/bin/activate  # Linux/Mac
    venv\Scripts\activate     # Windows
    ```
 
-3. Install dependencies:
+5. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Create `.env` file:
+6. Frontend Setup
    ```bash
-   echo "OPENAI_API_KEY=your_openai_key" > .env
-   echo "SERPER_API_KEY=your_serper_key" >> .env
+   cd ../frontend
+   ```
+
+7. run npm install
+   ```bash
+   npm install
    ```
 
 ### Running the Server
@@ -101,14 +113,6 @@ waitress-serve --port=8000 app:app
    docker run -p 8000:8000 --env-file .env rsearch-flask
    ```
 
-### Cloud Deployment
-
-Recommended services:
-- AWS Elastic Beanstalk
-- Google Cloud Run
-- Azure App Service
-- Heroku
-
 ## Configuration
 
 | Environment Variable | Required | Description |
@@ -117,19 +121,21 @@ Recommended services:
 | `SERPER_API_KEY` | Yes | Your Serper API key |
 | `FLASK_ENV` | No | Set to "production" for prod |
 
-## Frontend Integration
+## Running the System 
 
-Connect your frontend by setting the base URL:
-```javascript
-const API_BASE_URL = 'http://localhost:8000';
+### 1. Start Backend (in one terminal)
+```bash
+cd backend
+python app.py
+# Runs on http://localhost:8000
 ```
 
-## Troubleshooting
-
-**Common Issues:**
-- `404 Not Found`: Ensure endpoint paths match exactly
-- `CORS Errors`: Verify CORS middleware is properly configured
-- `Streaming Issues`: Check OpenAI API key and model availability
+### 2. Start Frontend (in another terminal)
+```bash
+cd frontend
+npm run dev
+# Runs on http://localhost:3000
+```
 
 ## License
 
@@ -141,15 +147,3 @@ MIT License
 - Serper API for search results
 - OpenAI for AI capabilities
 ```
-
-This README includes:
-
-1. **Key Metadata**: Badges showing Python/Flask versions
-2. **Clear Feature List**: Highlights core capabilities
-3. **API Documentation**: Endpoint specifications
-4. **Setup Instructions**: From installation to deployment
-5. **Configuration Guide**: Environment variables
-6. **Troubleshooting**: Common issues and solutions
-7. **Deployment Options**: Docker and cloud platforms
-
-You can customize the deployment and license sections as needed for your specific use case. The README provides everything needed for developers to understand, install, and use your backend service.
